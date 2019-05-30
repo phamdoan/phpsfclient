@@ -9,7 +9,7 @@
 namespace phpsfclient\HelloComposer;
 use phpsfclient\HelloComposer\SforceBaseClient;
 
-class SforceSoapClient extends SoapClient {
+class SforceSoapClient extends \SoapClient {
     function __doRequest($request, $location, $action, $version, $one_way=0) {
       $response = parent::__doRequest($request, $location, $action, $version, $one_way);
  
