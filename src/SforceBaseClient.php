@@ -138,7 +138,7 @@ class SforceBaseClient {
 
 	public function setCallOptions($header) {
 		if ($header != NULL) {
-			$this->callOptions = new SoapHeader($this->namespace, 'CallOptions', array (
+			$this->callOptions = new \SoapHeader($this->namespace, 'CallOptions', array (
 		  'client' => $header->client,
 		  'defaultNamespace' => $header->defaultNamespace
 			));
@@ -329,7 +329,7 @@ class SforceBaseClient {
 
 	public function setAssignmentRuleHeader($header) {
 		if ($header != NULL) {
-			$this->assignmentRuleHeader = new SoapHeader($this->namespace, 'AssignmentRuleHeader', array (
+			$this->assignmentRuleHeader = new \SoapHeader($this->namespace, 'AssignmentRuleHeader', array (
 			 'assignmentRuleId' => $header->assignmentRuleId,
 			 'useDefaultRule' => $header->useDefaultRuleFlag
 			));
@@ -340,7 +340,7 @@ class SforceBaseClient {
 
 	public function setEmailHeader($header) {
 		if ($header != NULL) {
-			$this->emailHeader = new SoapHeader($this->namespace, 'EmailHeader', array (
+			$this->emailHeader = new \SoapHeader($this->namespace, 'EmailHeader', array (
 			 'triggerAutoResponseEmail' => $header->triggerAutoResponseEmail,
 			 'triggerOtherEmail' => $header->triggerOtherEmail,
 			 'triggerUserEmail' => $header->triggerUserEmail
@@ -352,7 +352,7 @@ class SforceBaseClient {
 
 	public function setLoginScopeHeader($header) {
 		if ($header != NULL) {
-			$this->loginScopeHeader = new SoapHeader($this->namespace, 'LoginScopeHeader', array (
+			$this->loginScopeHeader = new \SoapHeader($this->namespace, 'LoginScopeHeader', array (
 		'organizationId' => $header->organizationId,
 		'portalId' => $header->portalId
 			));
@@ -364,7 +364,7 @@ class SforceBaseClient {
 
 	public function setMruHeader($header) {
 		if ($header != NULL) {
-			$this->mruHeader = new SoapHeader($this->namespace, 'MruHeader', array (
+			$this->mruHeader = new \SoapHeader($this->namespace, 'MruHeader', array (
 			 'updateMru' => $header->updateMruFlag
 			));
 		} else {
@@ -374,7 +374,7 @@ class SforceBaseClient {
 
 	public function setSessionHeader($id) {
 		if ($id != NULL) {
-			$this->sessionHeader = new SoapHeader($this->namespace, 'SessionHeader', array (
+			$this->sessionHeader = new \SoapHeader($this->namespace, 'SessionHeader', array (
 			 'sessionId' => $id
 			));
 			$this->sessionId = $id;
@@ -386,7 +386,7 @@ class SforceBaseClient {
 
 	public function setUserTerritoryDeleteHeader($header) {
 		if ($header != NULL) {
-			$this->userTerritoryDeleteHeader = new SoapHeader($this->namespace, 'UserTerritoryDeleteHeader  ', array (
+			$this->userTerritoryDeleteHeader = new \SoapHeader($this->namespace, 'UserTerritoryDeleteHeader  ', array (
 			 'transferToUserId' => $header->transferToUserId
 			));
 		} else {
@@ -396,7 +396,7 @@ class SforceBaseClient {
 
 	public function setQueryOptions($header) {
 		if ($header != NULL) {
-			$this->queryHeader = new SoapHeader($this->namespace, 'QueryOptions', array (
+			$this->queryHeader = new \SoapHeader($this->namespace, 'QueryOptions', array (
 			 'batchSize' => $header->batchSize
 			));
 		} else {
@@ -406,7 +406,7 @@ class SforceBaseClient {
 	
 	public function setAllowFieldTruncationHeader($header) {
 		if ($header != NULL) {
-			$this->allowFieldTruncationHeader = new SoapHeader($this->namespace, 'AllowFieldTruncationHeader', array (
+			$this->allowFieldTruncationHeader = new \SoapHeader($this->namespace, 'AllowFieldTruncationHeader', array (
 					'allowFieldTruncation' => $header->allowFieldTruncation
 				)
 			);
@@ -417,7 +417,7 @@ class SforceBaseClient {
 	
 	public function setLocaleOptions($header) {
 		if ($header != NULL) {
-			$this->localeOptions = new SoapHeader($this->namespace, 'LocaleOptions',
+			$this->localeOptions = new \SoapHeader($this->namespace, 'LocaleOptions',
 				array (
 					'language' => $header->language
 				)
@@ -442,7 +442,7 @@ class SforceBaseClient {
 				);
 			}
 			
-			$this->packageVersionHeader = new SoapHeader($this->namespace,
+			$this->packageVersionHeader = new \SoapHeader($this->namespace,
 				'PackageVersionHeader',
 				$headerData
 			);
