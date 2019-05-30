@@ -1,7 +1,6 @@
 {
     "name": "phamdoan/phpsfclient",
     "description": "Force.com Toolkit for Lavarel",
-    "type": "developerforce/force.com-toolkit-for-php",
     "authors": [
         {
             "name": "Doan Pham",
