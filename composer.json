@@ -1,0 +1,22 @@
+{
+    "name": "phamdoan/phpsfclient",
+    "description": "Force.com Toolkit for Lavarel",
+    "type": "developerforce/force.com-toolkit-for-php",
+    "authors": [
+        {
+            "name": "Doan Pham",
+            "email": "linuxdoanpham@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "ext-soap" : "*",
+        "lib-libxml" : "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "phpsfclient\\HelloComposer\\": "src/"
+        }
+    }
+}
