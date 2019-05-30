@@ -180,7 +180,7 @@ class SforceBaseClient {
 	 */
 	public function logout() {
         $this->setHeaders("logout");
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		return $this->sforce->logout();
 	}
  
@@ -191,7 +191,7 @@ class SforceBaseClient {
 	 */
 	public function invalidateSessions() {
         $this->setHeaders("invalidateSessions");
-		$arg = new stdClass();
+		$arg = new \stdClass();
         $this->logout();
 		return $this->sforce->invalidateSessions();
 	} 
@@ -527,7 +527,7 @@ class SforceBaseClient {
 		$email = new \SoapVar($r, SOAP_ENC_OBJECT, 'SingleEmailMessage', $this->namespace);
 		array_push($messages, $email);
 	  }
-	  $arg = new stdClass();
+	  $arg = new \stdClass();
 	  $arg->messages = $messages;
 	  return $this->_sendEmail($arg);
 	} else {
@@ -543,7 +543,7 @@ class SforceBaseClient {
 		$email = new \SoapVar($r, SOAP_ENC_OBJECT, 'MassEmailMessage', $this->namespace);
 		array_push($messages, $email);
 	  }
-	  $arg = new stdClass();
+	  $arg = new \stdClass();
 	  $arg->messages = $messages;
 	  return $this->_sendEmail($arg);
 	} else {
@@ -566,7 +566,7 @@ class SforceBaseClient {
 	 */
 	public function convertLead($leadConverts) {
 		$this->setHeaders("convertLead");
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		$arg->leadConverts = $leadConverts;
 		return $this->sforce->convertLead($arg);
 	}
@@ -583,12 +583,12 @@ class SforceBaseClient {
 			$result = array();
 			$chunked_ids = array_chunk($ids, 200);
 			foreach($chunked_ids as $cids) {
-				$arg = new stdClass;
+				$arg = new \stdClass;
 				$arg->ids = $cids;
 				$result = array_merge($result, $this->sforce->delete($arg)->result);
 			}
 		} else {
-			$arg = new stdClass;
+			$arg = new \stdClass;
 			$arg->ids = $ids;
 			$result = $this->sforce->delete($arg)->result;
 		}
@@ -603,7 +603,7 @@ class SforceBaseClient {
 	 */
 	public function undelete($ids) {
 		$this->setHeaders("undelete");
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		$arg->ids = $ids;
 		return $this->sforce->undelete($arg)->result;
 	}
@@ -616,7 +616,7 @@ class SforceBaseClient {
 	 */
 	public function emptyRecycleBin($ids) {
 		$this->setHeaders();
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		$arg->ids = $ids;
 		return $this->sforce->emptyRecycleBin($arg)->result;
 	}
@@ -632,7 +632,7 @@ class SforceBaseClient {
 			foreach ($processRequestArray as &$process) {
 				$process = new \SoapVar($process, SOAP_ENC_OBJECT, 'ProcessSubmitRequest', $this->namespace);
 			}
-			$arg = new stdClass();
+			$arg = new \stdClass();
 			$arg->actions = $processRequestArray;
 			return $this->_process($arg);
 		} else {
@@ -652,7 +652,7 @@ class SforceBaseClient {
 			foreach ($processRequestArray as &$process) {
 				$process = new \SoapVar($process, SOAP_ENC_OBJECT, 'ProcessWorkitemRequest', $this->namespace);
 			}
-			$arg = new stdClass();
+			$arg = new \stdClass();
 			$arg->actions = $processRequestArray;
 			return $this->_process($arg);
 		} else {
@@ -683,7 +683,7 @@ class SforceBaseClient {
 	 */
 	public function describeLayout($type, array $recordTypeIds=null) {
 		$this->setHeaders("describeLayout");
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		$arg->sObjectType = new \SoapVar($type, XSD_STRING, 'string', 'http://www.w3.org/2001/XMLSchema');
 		if (isset($recordTypeIds) && count($recordTypeIds)) 
 			$arg->recordTypeIds = $recordTypeIds;
@@ -699,7 +699,7 @@ class SforceBaseClient {
 	 */
 	public function describeSObject($type) {
 		$this->setHeaders("describeSObject");
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		$arg->sObjectType = new \SoapVar($type, XSD_STRING, 'string', 'http://www.w3.org/2001/XMLSchema');
 		return $this->sforce->describeSObject($arg)->result;
 	}
@@ -737,7 +737,7 @@ class SforceBaseClient {
 	 */
 	public function describeDataCategoryGroups($sObjectType) {
 		$this->setHeaders('describeDataCategoryGroups');
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		$arg->sObjectType = new \SoapVar($sObjectType, XSD_STRING, 'string', 'http://www.w3.org/2001/XMLSchema');
 		return $this->sforce->describeDataCategoryGroups($arg)->result;
 	}
@@ -751,7 +751,7 @@ class SforceBaseClient {
 	 */
 	public function describeDataCategoryGroupStructures(array $pairs, $topCategoriesOnly) {
 		$this->setHeaders('describeDataCategoryGroupStructures');
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		$arg->pairs = $pairs;
 		$arg->topCategoriesOnly = new \SoapVar($topCategoriesOnly, XSD_BOOLEAN, 'boolean', 'http://www.w3.org/2001/XMLSchema');
 
@@ -769,7 +769,7 @@ class SforceBaseClient {
 	 */
 	public function getDeleted($type, $startDate, $endDate) {
 		$this->setHeaders("getDeleted");
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		$arg->sObjectType = new \SoapVar($type, XSD_STRING, 'string', 'http://www.w3.org/2001/XMLSchema');
 		$arg->startDate = $startDate;
 		$arg->endDate = $endDate;
@@ -787,7 +787,7 @@ class SforceBaseClient {
 	 */
 	public function getUpdated($type, $startDate, $endDate) {
 		$this->setHeaders("getUpdated");
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		$arg->sObjectType = new \SoapVar($type, XSD_STRING, 'string', 'http://www.w3.org/2001/XMLSchema');
 		$arg->startDate = $startDate;
 		$arg->endDate = $endDate;
@@ -821,7 +821,7 @@ class SforceBaseClient {
 	 */
 	public function queryMore($queryLocator) {
 		$this->setHeaders("queryMore");
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		$arg->queryLocator = $queryLocator;
 		$raw = $this->sforce->queryMore($arg)->result;
 		$QueryResult = new QueryResult($raw);
@@ -857,7 +857,7 @@ class SforceBaseClient {
 	 */
 	public function retrieve($fieldList, $sObjectType, $ids) {
 		$this->setHeaders("retrieve");
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		$arg->fieldList = $fieldList;
 		$arg->sObjectType = new \SoapVar($sObjectType, XSD_STRING, 'string', 'http://www.w3.org/2001/XMLSchema');
 		$arg->ids = $ids;
@@ -872,7 +872,7 @@ class SforceBaseClient {
 	 */
 	public function search($searchString) {
 		$this->setHeaders("search");
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		$arg->searchString = new \SoapVar($searchString, XSD_STRING, 'string', 'http://www.w3.org/2001/XMLSchema');
 		return new SforceSearchResult($this->sforce->search($arg)->result);
 	}
@@ -900,7 +900,7 @@ class SforceBaseClient {
 	 */
 	public function setPassword($userId, $password) {
 		$this->setHeaders("setPassword");
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		$arg->userId = new \SoapVar($userId, XSD_STRING, 'string', 'http://www.w3.org/2001/XMLSchema');
 		$arg->password = $password;
 		return $this->sforce->setPassword($arg);
@@ -914,7 +914,7 @@ class SforceBaseClient {
 	 */
 	public function resetPassword($userId) {
 		$this->setHeaders("resetPassword");
-		$arg = new stdClass();
+		$arg = new \stdClass();
 		$arg->userId = new \SoapVar($userId, XSD_STRING, 'string', 'http://www.w3.org/2001/XMLSchema');
 		return $this->sforce->resetPassword($arg)->result;
 	}
@@ -1145,7 +1145,7 @@ class SObject {
 
 		$array = $this->xml2array('<Object xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'.$str.'</Object>', 2);
 
-		$xml = new stdClass();
+		$xml = new \stdClass();
 		if (!count($array['Object']))
 			return $xml;
 

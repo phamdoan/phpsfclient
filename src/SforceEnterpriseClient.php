@@ -26,7 +26,6 @@
  */
 namespace phpsfclient\HelloComposer;
 use phpsfclient\HelloComposer\SforceBaseClient;
-use phpsfclient\HelloComposer\SforceSoapClient;
 /**
  * This file contains two classes.
  * @package SalesforceSoapClient
