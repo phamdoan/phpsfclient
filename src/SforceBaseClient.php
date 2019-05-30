@@ -62,7 +62,7 @@ class SforceBaseClient {
 	protected $packageVersionHeader;
 	
   protected function getSoapClient($wsdl, $options) {
-		return new SoapClient($wsdl, $options);      
+		return new \SoapClient($wsdl, $options);      
   }
 	
 	public function getNamespace() {
