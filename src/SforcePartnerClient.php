@@ -40,7 +40,7 @@ class SforcePartnerClient extends SforceBaseClient
      */
     public function create($sObjects)
     {
-        $arg = new stdClass;
+        $arg = new \stdClass;
         foreach ($sObjects as $sObject) {
             if (isset($sObject->fields)) {
                 $sObject->any = $this->_convertToAny($sObject->fields);
@@ -59,7 +59,7 @@ class SforcePartnerClient extends SforceBaseClient
      */
     public function merge($mergeRequest)
     {
-        $arg = new stdClass;
+        $arg = new \stdClass;
         if (isset($mergeRequest->masterRecord)) {
             if (isset($mergeRequest->masterRecord->fields)) {
                 $mergeRequest->masterRecord->any = $this->_convertToAny($mergeRequest->masterRecord->fields);
@@ -76,7 +76,7 @@ class SforcePartnerClient extends SforceBaseClient
      */
     public function sendSingleEmail($request)
     {
-        $arg = new stdClass;
+        $arg = new \stdClass;
         if (is_array($request)) {
             $messages = array();
             foreach ($request as $r) {
@@ -97,7 +97,7 @@ class SforcePartnerClient extends SforceBaseClient
      */
     public function sendMassEmail($request)
     {
-        $arg = new stdClass;
+        $arg = new \stdClass;
         if (is_array($request)) {
             $messages = array();
             foreach ($request as $r) {
@@ -119,7 +119,7 @@ class SforcePartnerClient extends SforceBaseClient
      */
     public function update($sObjects)
     {
-        $arg = new stdClass;
+        $arg = new \stdClass;
         foreach ($sObjects as $sObject) {
             if (isset($sObject->fields)) {
                 $sObject->any = $this->_convertToAny($sObject->fields);
@@ -142,7 +142,7 @@ class SforcePartnerClient extends SforceBaseClient
     public function upsert($ext_Id, $sObjects)
     {
         //		$this->_setSessionHeader();
-        $arg                      = new stdClass;
+        $arg                      = new \stdClass;
         $arg->externalIDFieldName = new SoapVar($ext_Id, XSD_STRING, 'string', 'http://www.w3.org/2001/XMLSchema');
         foreach ($sObjects as $sObject) {
             if (isset($sObject->fields)) {
