@@ -10,7 +10,7 @@
 // If you don't to add a custom vendor folder, then use the simple class
 // namespace HelloComposer;
 namespace phpsfclient\HelloComposer;
-require_once('SforceBaseClient.php');
+use phpsfclient\HelloComposer\SforceBaseClient;
 /**
  * SforcePartnerClient class.
  *
