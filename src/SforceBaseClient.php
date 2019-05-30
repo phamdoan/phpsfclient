@@ -944,7 +944,7 @@ class SforceSearchResult {
 	}
 }
 
-class QueryResult implements Iterator{
+class QueryResult implements \Iterator{
 	public $queryLocator;
 	public $done;
 	public $records;
