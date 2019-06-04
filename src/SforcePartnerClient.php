@@ -9,9 +9,9 @@
 
 // If you don't to add a custom vendor folder, then use the simple class
 // namespace HelloComposer;
-namespace phpsfclient\HelloComposer;
-use phpsfclient\HelloComposer\SforceBaseClient;
-use phpsfclient\HelloComposer\SforceSoapClient;
+namespace phpsfclient\SalesforceSoapClient;
+use phpsfclient\SalesforceSoapClient\SforceBaseClient;
+use phpsfclient\SalesforceSoapClient\SforceSoapClient;
 
 /**
  * SforcePartnerClient class.

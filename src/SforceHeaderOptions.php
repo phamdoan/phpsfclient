@@ -30,7 +30,7 @@
  * @package SalesforceSoapClient
  */
 
-namespace phpsfclient\HelloComposer;
+namespace phpsfclient\SalesforceSoapClient;
 class CallOptions {
 	public $client;
 	public $defaultNamespace;

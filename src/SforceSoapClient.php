@@ -6,8 +6,8 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace phpsfclient\HelloComposer;
-use phpsfclient\HelloComposer\SforceBaseClient;
+namespace phpsfclient\SalesforceSoapClient;
+use phpsfclient\SalesforceSoapClient\SforceBaseClient;
 
 class SforceSoapClient extends \SoapClient {
     function __doRequest($request, $location, $action, $version, $one_way=0) {

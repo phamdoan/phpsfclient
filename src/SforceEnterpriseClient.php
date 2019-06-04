@@ -24,8 +24,8 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-namespace phpsfclient\HelloComposer;
-use phpsfclient\HelloComposer\SforceBaseClient;
+namespace phpsfclient\SalesforceSoapClient;
+use phpsfclient\SalesforceSoapClient\SforceBaseClient;
 /**
  * This file contains two classes.
  * @package SalesforceSoapClient
